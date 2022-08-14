@@ -1,12 +1,12 @@
 {
   "name": "yapi-magic",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "yapi 输出到前端项目中api ts & js",
   "main": "client/index.js",
   "module": "client/index.mjs",
   "typing": "client/index.d.ts",
   "bin": {
-    "yapiMagic": "lib/cli.js"
+    "yapiMagic": "lib/src/cli.js"
   },
   "license": "MIT",
   "keywords": [
