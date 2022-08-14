@@ -1,6 +1,6 @@
 {
   "name": "yapi-magic",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "yapi 输出到前端项目中api ts & js",
   "main": "client/index.js",
   "module": "client/index.mjs",
@@ -107,7 +107,7 @@
     "request-promise-native": "^1.0.5",
     "ts-node": "^8.0.2",
     "tslib": "^1.9.3",
-    "vtils": "^0.76.1",
+    "vtils": "^2.26.0",
     "yapi-to-typescript": "^1.4.0"
   }
 }
