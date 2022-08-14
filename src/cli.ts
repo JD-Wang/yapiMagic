@@ -10,12 +10,12 @@ import path from 'path'
 import prompt from 'prompts'
 import { Config, ServerConfig } from './types'
 import { Generator } from './Generator/index'
-import pkg from './../package.json'
 import login from './login'
 
 import { resolveApp } from './utils'
 
 import { configTemplate, viewHtmlTemplate } from './template'
+const pkg = require('./../package.json')
 
 const openChangelog = (outputFilePath: string) => {
   // 打开变动视图
