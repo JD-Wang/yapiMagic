@@ -39,7 +39,7 @@ const userLogin = async function (
     }
   } catch (e) {
     consola.error('登录失败')
-    return Promise.reject(e)
+    process.exit(0)
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "yapi-magic",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "yapi 输出到前端项目中api ts & js",
   "main": "client/index.js",
   "module": "client/index.mjs",
