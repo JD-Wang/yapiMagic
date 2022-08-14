@@ -163,10 +163,10 @@ export class Generator {
   }
 
   async generate() {
-    // if (!isGitWorkspaceEmpty) {
-    //   consola.error('检测到您git工作区存在未提交文件，请先处理')
-    //   return Promise.reject()
-    // }
+    if (!isGitWorkspaceEmpty) {
+      consola.error('检测到您git工作区存在未提交文件，请先处理')
+      return Promise.reject()
+    }
     try {
       const res = await this.fetchApi()
       // const {
