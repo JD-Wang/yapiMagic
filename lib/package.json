@@ -1,0 +1,113 @@
+{
+    "name": "yapiMagic",
+    "version": "1.2.0",
+    "description": "yapi 输出到前端项目中api ts & js",
+    "main": "client/index.js",
+    "module": "client/index.mjs",
+    "typing": "client/index.d.ts",
+    "bin": {
+        "yapiMagic": "lib/cli.js"
+    },
+    "license": "MIT",
+    "keywords": [
+        "yfeapi2ts",
+        "yapi",
+        "@bwyd/yapi-magic",
+        "typescript",
+        "typing"
+    ],
+    "files": [
+        "lib",
+        "client"
+    ],
+    "scripts": {
+        "lint": "eslint --fix --ext .ts src/",
+        "testApi": "ts-node --transpile-only src/cli.ts",
+        "testOnly": "jest",
+        "test": "jest --coverage",
+        "build": "npm run buildCli && npm run buildClient",
+        "buildCli": "tsc",
+        "buildClient": "bili",
+        "release": "npm run build && npm publish",
+        "clear": "ts-node --transpile-only src/cli.ts clear"
+    },
+    "eslintConfig": {
+        "root": true,
+        "extends": "io"
+    },
+    "eslintIgnore": [
+        "lib",
+        "client",
+        "__snapshots__",
+        "api"
+    ],
+    "jest": {
+        "transform": {
+            "^.+\\.ts$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "<rootDir>/src/**/*.ts",
+            "!<rootDir>/src/index.ts",
+            "!<rootDir>/src/api/**/*"
+        ],
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "js",
+            "json"
+        ]
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^5.0.4",
+        "@types/inquirer": "^9.0.0",
+        "@types/jest": "^23.3.9",
+        "@types/json-schema": "^7.0.1",
+        "@types/json5": "^0.0.30",
+        "@types/lodash": "^4.14.123",
+        "@types/mockjs": "^1.0.2",
+        "@types/node": "^10.12.10",
+        "@types/prompts": "^1.2.0",
+        "@types/request-promise-native": "^1.0.15",
+        "bili": "^4.7.1",
+        "codecov": "^3.1.0",
+        "eslint": "^5.9.0",
+        "eslint-config-io": "^0.5.0",
+        "jest": "^23.6.0",
+        "rollup-plugin-typescript2": "^0.20.1",
+        "standard-version": "^4.4.0",
+        "ts-jest": "^23.10.5",
+        "typescript": "^3.3.3333"
+    },
+    "dependencies": {
+        "@types/express": "^4.16.1",
+        "@types/open": "^6.1.0",
+        "@types/opn": "^5.5.0",
+        "anywhere": "^1.5.0",
+        "change-case": "^3.0.2",
+        "child_process": "^1.0.2",
+        "commander": "^2.19.0",
+        "consola": "^2.3.0",
+        "exec-sh": "^0.3.4",
+        "express": "^4.16.4",
+        "fs-extra": "^7.0.1",
+        "git-diff": "^2.0.6",
+        "inquirer": "^8.0.0",
+        "json-schema-generator": "^2.0.6",
+        "json-schema-to-typescript": "^6.1.0",
+        "json-ts": "^1.6.4",
+        "json5": "^2.1.0",
+        "lodash": "^4.17.11",
+        "mockjs": "^1.0.1-beta3",
+        "open": "^6.2.0",
+        "opn": "^6.0.0",
+        "ora": "^3.4.0",
+        "prettier": "^2.0.5",
+        "prompts": "^2.0.4",
+        "request": "^2.88.0",
+        "request-promise-native": "^1.0.5",
+        "ts-node": "^8.0.2",
+        "tslib": "^1.9.3",
+        "vtils": "^0.76.1",
+        "yapi-to-typescript": "^1.4.0"
+    }
+}
