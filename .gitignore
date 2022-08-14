@@ -21,6 +21,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+.rpt2_cache
 
 package-lock.json
 pnpm-lock.yaml
