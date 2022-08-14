@@ -9,7 +9,7 @@
 ## 安装
 
 ```
-npm i yapiMagic -g
+npm i yapi-magic -g
 
 ```
 

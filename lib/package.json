@@ -1,5 +1,5 @@
 {
-    "name": "yapiMagic",
+    "name": "yapi-magic",
     "version": "1.2.0",
     "description": "yapi 输出到前端项目中api ts & js",
     "main": "client/index.js",
