@@ -27,6 +27,10 @@ const userLogin = async function (
       json: true,
       resolveWithFullResponse: true,
     })
+    // 登录失败
+    if (res.body.errcode) {
+      return Promise.reject(res.body.errmsg)
+    }
     const [cookie0, cookie1] = res.headers['set-cookie']
     const _yapi_token = cookie0.split(';')[0].split('=')[1]
     const _yapi_uid = cookie1.split(';')[0].split('=')[1]

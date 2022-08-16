@@ -86,7 +86,11 @@ export class Generator {
       json: true,
       headers: headers,
     })
-    return res
+    if (res.errcode) {
+      return Promise.reject(`projectId：${projectId}, ${res.errmsg}, 请检查id是否正确`)
+    } else {
+      return res
+    }
   }
 
   /** 生成请求数据类型 */
@@ -260,6 +264,7 @@ export class Generator {
       })
       return arr
     } catch (e) {
+      consola.error(e)
       consola.error(`遇到错误，流程已中断`)
       process.exit(0)
     }
@@ -303,6 +308,14 @@ export class Generator {
         resolveApp(`${this.config.outputFilePath}/${name}.${this.config.target}`),
         prettier.format(data, {
           parser: this.config.target === 'ts' ? 'typescript' : 'babel',
+          useTabs: false,
+          tabWidth: 4,
+          singleQuote: true,
+          trailingComma: "none",
+          bracketSpacing: true,
+          semi: false,
+          endOfLine: "auto",
+          arrowParens: "avoid",
         }),
       )
       // this.addedFiles.push(`${name}.${this.config.target}`)
@@ -433,7 +446,7 @@ export class Generator {
 
           if (modifieds.length > 0) {
             consola.log('---------------------------------------------------')
-            consola.warn(`❗ 更新接口：${modifieds.length} 个, 如下:`)
+            consola.success(`❗ 更新接口：${modifieds.length} 个, 如下:`)
             modifieds.forEach(added => {
               consola.info(added)
             })
@@ -446,7 +459,7 @@ export class Generator {
               consola.info(added)
             })
           }
-          consola.warn(`project: ${this.config.projectId}, 共计更新了${addeds.length + deleteds.length + modifieds.length}个接口文件，请到git工作区比对文件更新`)
+          consola.success(`project: ${this.config.projectId}, 共计更新了${addeds.length + deleteds.length + modifieds.length}个接口文件，请到git工作区比对文件更新`)
           consola.log('===================================================')
 
           // generateIndexFile 控制 index 入口

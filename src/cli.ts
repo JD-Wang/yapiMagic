@@ -47,7 +47,7 @@ const generatoraFiles = async (config: ServerConfig) => {
     await login.run(config.serverUrl)
   }
 
-  const spinner = ora('🛫 正在获取yapi数据样本').start()
+  const spinner = ora(`🛫 正在获取project: ${config.projectId} 的yapi数据样本`).start()
   try {
     const output = await generator.generate()
     spinner.info(`🌈 开始写入project: ${config.projectId}`)

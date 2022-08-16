@@ -57,7 +57,7 @@ const generateApiFileCode = (projectId: string) => (api: Interface & IOutPut) =>
           }
         },
         data,
-        ...typeof config === 'boolean' ? { showMsg: config } : config,
+        ...typeof config === 'boolean' ? { showMsg: config } : config
       })
     `)
   } else {
@@ -72,7 +72,7 @@ const generateApiFileCode = (projectId: string) => (api: Interface & IOutPut) =>
           }
         },
         data,
-        ...typeof config === 'boolean' ? { showMsg: config } : config,
+        ...typeof config === 'boolean' ? { showMsg: config } : config
       })
     `)
   }
