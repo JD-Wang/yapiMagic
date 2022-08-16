@@ -1,8 +1,8 @@
-import { Interface, IOutPut, ServerConfig } from 'yapiMagic'
+import { Interface, IOutPut, ServerConfig } from './src/index'
 import consola from 'consola'
 
-const serverUrl = 'https://yapi.xxxxxx.com'
-if (serverUrl === 'https://yapi.xxxxxx.com') {
+const serverUrl = 'https://yapi.xxxxx.cn'
+if (serverUrl.includes('xxxxx')) {
   consola.warn('请先配置yapi地址，更换serverUrl')
   process.exit(0)
 }

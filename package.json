@@ -1,6 +1,6 @@
 {
   "name": "yapi-magic",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "yapi 输出到前端项目中api ts & js",
   "main": "client/index.js",
   "module": "client/index.mjs",
@@ -28,8 +28,7 @@
     "build": "npm run buildCli && npm run buildClient",
     "buildCli": "tsc",
     "buildClient": "bili",
-    "release": "npm run build && npm publish",
-    "clear": "ts-node --transpile-only src/cli.ts clear"
+    "release": "npm run build && npm publish"
   },
   "eslintConfig": {
     "root": true,
