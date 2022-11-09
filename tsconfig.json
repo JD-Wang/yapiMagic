@@ -4,6 +4,7 @@
     "paths": { "*": ["types/*"] },
     "strict": true,
     "target": "es2017",
+    "skipLibCheck": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,

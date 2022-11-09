@@ -104,15 +104,12 @@ class Login {
         return !!this._yapi_token
     }
 
-    getToken() {
+    getCookie() {
         if (!this._yapi_token || !this._yapi_uid) {
             consola.warn('没有登陆，请重新执行')
             process.exit(0)
         }
-        return {
-            _yapi_token: this._yapi_token,
-            _yapi_uid: this._yapi_uid
-        }
+        return `_yapi_token=${this._yapi_token};_yapi_uid=${this._yapi_uid}`
     }
 }
 

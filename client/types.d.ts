@@ -186,6 +186,10 @@ export interface ServerConfig {
      */
     notCheckGit?: boolean;
     /**
+     * prettier格式化
+     */
+    prettier?: object;
+    /**
      * 过滤需要比对的文件方法
      * currentGitBranch 当前git分支号
      */
@@ -288,7 +292,7 @@ export interface IOutPut {
     /**
      * yapi 基础数据源，包含yapi该项接口所有源数据
      */
-    yapiBaseInfo: Object;
+    yapiBaseInfo: object;
 }
 export interface IFiles {
     [propName: string]: string;

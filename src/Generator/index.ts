@@ -76,10 +76,9 @@ export class Generator {
     // 获取api
     const url = `${serverUrl}/api/plugin/export?type=json&pid=${projectId}&status=all&isWiki=false`
 
-    const { _yapi_token, _yapi_uid } = login.getToken()
 
     const headers = {
-      Cookie: `_yapi_token=${_yapi_token};_yapi_uid=${_yapi_uid}`,
+      Cookie: login.getCookie(),
     }
 
     const res = await request.get(url, {
@@ -280,12 +279,15 @@ export class Generator {
       // 已存在该文件
       const realPath = `${this.config.outputFilePath}/${name}.${this.config.target}`
       const oldData = fs.readFileSync(realPath, 'utf-8').toString()
-      const data1 = prettier.format(data, {
-        parser: this.config.target === 'ts' ? 'typescript' : 'babel',
-        singleQuote: true,
-        semi: false,
-        tabWidth: 4
-      })
+      let data1 = data
+      // 是否进行prettier格式化
+      if (this.config.prettier) {
+        data1 = prettier.format(data, {
+          parser: this.config.target === 'ts' ? 'typescript' : 'babel',
+          ...this.config.prettier
+        })
+      }
+     
       if (oldData !== data1) {
         // 修改已存在文件
         const diffResult = this.getfileDiff(oldData, data1)

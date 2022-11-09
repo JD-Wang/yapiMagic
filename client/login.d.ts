@@ -4,10 +4,7 @@ declare class Login {
     constructor();
     run(serverUrl: string): Promise<void>;
     isLogin(): boolean;
-    getToken(): {
-        _yapi_token: String;
-        _yapi_uid: String;
-    };
+    getCookie(): string;
 }
 declare const _default: Login;
 export default _default;

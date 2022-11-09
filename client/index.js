@@ -3,7 +3,6 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 /** 请求方式 */
-
 (function (Method) {
   Method["GET"] = "GET";
   Method["POST"] = "POST";
@@ -13,59 +12,44 @@ Object.defineProperty(exports, '__esModule', { value: true });
   Method["OPTIONS"] = "OPTIONS";
   Method["PATCH"] = "PATCH";
 })(exports.Method || (exports.Method = {}));
-
 (function (Required) {
   /** 不必需 */
   Required["false"] = "0";
   /** 必需 */
-
   Required["true"] = "1";
 })(exports.Required || (exports.Required = {}));
-
 (function (RequestBodyType) {
   /** 查询字符串 */
   RequestBodyType["query"] = "query";
   /** 表单 */
-
   RequestBodyType["form"] = "form";
   /** JSON */
-
   RequestBodyType["json"] = "json";
   /** 纯文本 */
-
   RequestBodyType["text"] = "text";
   /** 文件 */
-
   RequestBodyType["file"] = "file";
   /** 原始数据 */
-
   RequestBodyType["raw"] = "raw";
   /** 无请求数据 */
-
   RequestBodyType["none"] = "none";
 })(exports.RequestBodyType || (exports.RequestBodyType = {}));
-
 (function (RequestFormItemType) {
   /** 纯文本 */
   RequestFormItemType["text"] = "text";
   /** 文件 */
-
   RequestFormItemType["file"] = "file";
 })(exports.RequestFormItemType || (exports.RequestFormItemType = {}));
-
 (function (ResponseBodyType) {
   /** JSON */
   ResponseBodyType["json"] = "json";
   /** 纯文本 */
-
   ResponseBodyType["text"] = "text";
   /** XML */
-
   ResponseBodyType["xml"] = "xml";
   /** 原始数据 */
-
-  ResponseBodyType["raw"] = "raw"; // yapi 实际上返回的是 json，有另外的字段指示其是否是 json schema
-
+  ResponseBodyType["raw"] = "raw";
+  // yapi 实际上返回的是 json，有另外的字段指示其是否是 json schema
   /** JSON Schema */
   // jsonSchema = 'json-schema',
 })(exports.ResponseBodyType || (exports.ResponseBodyType = {}));
@@ -79,13 +63,11 @@ function _typeof(obj) {
     return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
   }, _typeof(obj);
 }
-
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
@@ -95,7 +77,6 @@ function _defineProperties(target, props) {
     Object.defineProperty(target, descriptor.key, descriptor);
   }
 }
-
 function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
@@ -113,7 +94,6 @@ var FileData = /*#__PURE__*/function () {
    */
   function FileData(originalFileData) {
     _classCallCheck(this, FileData);
-
     this.originalFileData = originalFileData;
   }
   /**
@@ -121,15 +101,12 @@ var FileData = /*#__PURE__*/function () {
    *
    * @returns 原始文件数据
    */
-
-
   _createClass(FileData, [{
     key: "getOriginalFileData",
     value: function getOriginalFileData() {
       return this.originalFileData;
     }
   }]);
-
   return FileData;
 }();
 /**
@@ -138,13 +115,11 @@ var FileData = /*#__PURE__*/function () {
  * @param requestData 要解析的请求数据
  * @returns 包含普通数据(data)和文件数据(fileData)的对象，data、fileData 为空对象时，表示没有此类数据
  */
-
 function parseRequestData(requestData) {
   var result = {
     data: {},
     fileData: {}
   };
-
   if (requestData != null && _typeof(requestData) === 'object') {
     Object.keys(requestData).forEach(function (key) {
       if (requestData[key] && requestData[key] instanceof FileData) {
@@ -154,7 +129,6 @@ function parseRequestData(requestData) {
       }
     });
   }
-
   return result;
 }
 
